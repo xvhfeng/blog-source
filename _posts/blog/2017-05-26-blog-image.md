@@ -29,8 +29,8 @@ jekyll的插件有很多种，具体的请查看 [jekyll插件科普](http://jek
 
 回到我们的问题，我们的问题其实已经很清楚了，就是在jekyll解析markdown到html的同时，将同目录的静态文件全部cp到生成的html的目录。这样markdown文件生成的html和静态资源文件又在一个目录下了，这样就可以避免目录的问题了。  
 
-在这些插件的hooks中，我们选择了 :posts :post_write 这个hooks，因为这个hooks是在markdown已经被解析，并且被写入磁盘以后发生的。这个时间点正好就是我们想要的这个时间点。那么我们现在就是只要实现这个hooks就可以了。所以就有了下面的代码：
-  
+在这些插件的hooks中，我们选择了 :posts :post_write 这个hooks，因为这个hooks是在markdown已经被解析，并且被写入磁盘以后发生的。这个时间点正好就是我们想要的这个时间点。那么我们现在就是只要实现这个hooks就可以了。所以就有了下面的代码：   
+
     Jekyll::Hooks.register :posts, :post_write do |doc|
     # Minify HTML files after site build
     #  gulp = File.join(site.source, 'node_modules', '.bin', 'gulp')
@@ -56,7 +56,7 @@ jekyll的插件有很多种，具体的请查看 [jekyll插件科普](http://jek
     }
 
     end
-    
+
 将这个文件保存到_plugins目录下，随便给一个文件名即可。再次运行jekyll server就可以看到这个hooks被执行了。
 
 具体的使用可以看我的blog源码 [blog源码](https://github.com/xvhfeng/blog-source)

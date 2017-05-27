@@ -77,7 +77,7 @@ layout: default
       <div class="mt2 wrap">
           <div class="measure">
               {%if page.previous%}
-              <span class="next">
+              <span class="prev">
                   <a href="{{page.previous.url}}" style="color:black">
                       <--
                   </a>
@@ -85,7 +85,7 @@ layout: default
               {%endif%} 
               <nav class="site-nav">
                   {%if page.next%}
-                  <span class="prev">
+                  <span class="next">
                       <a href="{{page.next.url}}" style="color:black">
                           -->
                       </a>
@@ -93,7 +93,6 @@ layout: default
                   {%endif%}
               </nav>
               <div class="clearfix"></div>
-
           </div>
       </div>
   </header>
