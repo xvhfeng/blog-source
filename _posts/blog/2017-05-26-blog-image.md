@@ -59,7 +59,9 @@ jekyll的插件有很多种，具体的请查看 [jekyll插件科普](http://jek
 
 将这个文件保存到_plugins目录下，随便给一个文件名即可。再次运行jekyll server就可以看到这个hooks被执行了。
 
-具体的使用可以看我的blog源码 [blog源码](https://github.com/xvhfeng/blog-source)
+具体:  
+1. 项目源码: [github project](https://github.com/xvhfeng/jekyll-markdown-image)  
+2 如何使用：[blog源码](https://github.com/xvhfeng/blog-source)
 
 ### 缺点
 
