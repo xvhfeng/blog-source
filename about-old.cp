@@ -1,9 +1,4 @@
----
-layout: page
-title: About
-permalink: /about/
-tags: about
----
+
 #### 基础信息  
 徐海峰,出生于1984-11-21，已婚，目前定居上海  
 外号：大嘴。同事们都这么叫我.PS：大嘴并不是我管不住嘴，而是天生嗓门比较大  
