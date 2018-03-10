@@ -21,7 +21,7 @@ title: " 扩展vagrant磁盘映像"
     ![box-modify-error](vbox-modify-error.jpg)    
 
 3. 报错提示“格式不支持执行的操作”。但是找了半天，都说vmdk格式也可以动态扩展大小，但是不知道为什么VBoxManage不支持（HEI：难道是因为vmdk是vmware标准格式？）。但是VBoxManage命令支持vdi格式(HEI：vdi是vbox私有的格式。)。那就把vmdk格式转换成vdi吧！还是使用VBoxManage命令：
-    `VBoxManage clonehd /Users/xuhaifeng/VirtualBox\ VMs/vagrant_default_1493825204615_42659/box-disk1.vmdk /Users/xuhaifeng/VirtualBox\ VMs/vagrant_default_1493825204615_42659/box-disk1.vdi --format VDI`    
+    `VBoxManage clonehd /Users/xuhaifeng/VirtualBox\ VMs/vagrant_default_1493825204615_42659/box-disk1.vmdk   /Users/xuhaifeng/VirtualBox\ VMs/vagrant_default_1493825204615_42659/box-disk1.vdi --format VDI`    
     转换成功，结果如图所示：    
      ![box-disk-cast](vbox-disk-cast.png)
 
@@ -44,14 +44,21 @@ title: " 扩展vagrant磁盘映像"
 7. 把新扩展的磁盘大小给加上去。还是使用fdisk命令：
     `fdisk /dev/sda`    
     沿着命令，一路根据提示，输入：
-    `n `{new partition}     
-   ` p` {primary partition}
-    `3` {partition number}
-    [提示修改大小，默认直接回车]
-    `t `{change partition id}
-   ` 3` {partition number}
-    `8e` {Linux LVM partition}
-    `w`
+    `n `{new partition}        
+    
+   ` p` {primary partition}       
+   
+    `3` {partition number}       
+    
+    [提示修改大小，默认直接回车]      
+    
+    `t`{change partition id}      
+    
+   ` 3` {partition number}      
+   
+    `8e` {Linux LVM partition}      
+    
+    `w`       
     如图所示：
      ![fdisk-operator](fdisk-operator.png)
 
