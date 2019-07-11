@@ -9,7 +9,7 @@ git push
 cd ../blog/
 git checkout gh-pages
 rm -rf _site
-cp -rf ../blog-source/_site ./
+cp -rf ../blog-source/_site/ ./
 git add ./
 git commit -m"publish"
 git push
